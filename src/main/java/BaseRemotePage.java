@@ -12,15 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * BasePage class contains common methods for all page classes
  */
 
-public class BasePage {
-	public WebDriver driver;
-	public WebDriverWait wait;
-	
+public class BaseRemotePage {
+	public RemoteWebDriver driver;
+
 	//Constructor
-	public BasePage(WebDriver driver, WebDriverWait wait) {
+	public BaseRemotePage(RemoteWebDriver driver) {
 		this.driver = driver;
-		this.wait = wait;
-		System.out.println("BasePage class initialized");
+		System.out.println("BaseRemotePage class initialized");
 	}
 	
 	//Run tests through selenoid (selenium grid which uses docker)
@@ -58,6 +56,4 @@ public class BasePage {
 	public String getAttribute(String cssLocator, String attribute) {
 		return driver.findElement(By.cssSelector(cssLocator)).getAttribute(attribute);
 	}
-	
-
 }

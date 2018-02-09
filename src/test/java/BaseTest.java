@@ -1,10 +1,13 @@
 import static org.junit.Assert.*;
-
+import java.net.MalformedURLException;
+import java.net.URL;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest {
@@ -27,22 +30,4 @@ public class BaseTest {
 	public void tearDown() throws Exception {
 		driver.quit();
 	}
-
-	@Test
-	public void invalidSearchResultTest() throws InterruptedException {
-		//Page instantiations
-		HomePage homepage = new HomePage(driver, wait);
-		SearchPage searchpage = new SearchPage(driver, wait);
-		//Test Variables
-		String searchString = "dafdsfdasjfkldas";
-		//Page Methods
-		homepage.goToHomePage();
-		homepage.click(homepage.navBarSearch);
-		homepage.fillFields(homepage.navBarSearchTextField, searchString);
-		searchpage.verifySearchResultInvalidText();
-		searchpage.verifyAdvancedSearch();
-		searchpage.verifySearchUsedText(searchString);
-		searchpage.invalidSearchResult();
-	}
-
 }

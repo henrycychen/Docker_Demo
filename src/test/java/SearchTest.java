@@ -1,11 +1,10 @@
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SearchTest extends BaseTest{
-
+	
 	@Test
 	public void validSearchResultTest() throws InterruptedException {
 		//Page instantiations
@@ -39,5 +38,4 @@ public class SearchTest extends BaseTest{
 		searchpage.verifySearchUsedText(searchString);
 		searchpage.invalidSearchResult();
 	}
-
 }

@@ -9,7 +9,7 @@ public class HomeRemotePage extends BaseRemotePage{
 	
 	public HomeRemotePage(RemoteWebDriver driver) {
 		super(driver);
-		System.out.println("HomeRemotePage class activated");
+		System.out.println("HomeRemotePage class initialized");
 	}
 	
 	//Page Variables

@@ -8,7 +8,7 @@ public class HomePage extends BasePage{
 	//Constructor
 	public HomePage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
-		System.out.println("HomePage class activated");
+		System.out.println("HomePage class initialized");
 	}
 	
 	//Page Variables

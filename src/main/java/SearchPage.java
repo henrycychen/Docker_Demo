@@ -1,8 +1,8 @@
 
-import org.junit.*;
 import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.junit.*;
 
 public class SearchPage extends BasePage{
 	

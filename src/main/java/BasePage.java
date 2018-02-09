@@ -1,11 +1,7 @@
 
 
-import java.net.MalformedURLException;
-import java.net.URI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /*
@@ -22,22 +18,6 @@ public class BasePage {
 		this.wait = wait;
 		System.out.println("BasePage class initialized");
 	}
-	
-	//Run tests through selenoid (selenium grid which uses docker)
-    public void execute(String browser, String version) throws MalformedURLException, InterruptedException {
-	    	DesiredCapabilities capabilities = new DesiredCapabilities();
-	    	capabilities.setBrowserName(browser);
-	    	capabilities.setVersion(version);
-	    	capabilities.setCapability("enableVNC", true);
-	
-	    	RemoteWebDriver driver = new RemoteWebDriver(
-	    	    URI.create("http://165.227.9.145:4444/wd/hub/").toURL(), 
-	    	    capabilities
-	    	);
-	    	
-	    	driver.get("https://www.google.com");
-	    	Thread.sleep(15000);
-    }
 	
 	//Click Method
 	public void click(String cssLocator) {

@@ -1,3 +1,8 @@
+
+
+import java.net.MalformedURLException;
+import java.net.URI;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class HomeRemotePage extends BaseRemotePage{
@@ -21,7 +26,15 @@ public class HomeRemotePage extends BaseRemotePage{
 	public String navBarSignIn = ".row.desktop a[href='https://cloud.docker.com/login/']";
 	
 	//Page Methods
-	public void goToHomePage() {
+	public void goToHomePage(String browser, String version) throws MalformedURLException, InterruptedException {
+	    	DesiredCapabilities capabilities = new DesiredCapabilities();
+	    	capabilities.setBrowserName(browser);
+	    	capabilities.setVersion(version);
+	    	capabilities.setCapability("enableVNC", true);
+		this.driver = new RemoteWebDriver(
+	    	    URI.create("http://165.227.9.145:4444/wd/hub/").toURL(), 
+	    	    capabilities
+	    	);
 		driver.get(baseURL);
 	}
 }
